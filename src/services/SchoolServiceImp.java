@@ -8,7 +8,11 @@ import java.util.List;
 
 public class SchoolServiceImp implements  SchoolServices{
 
-    private SchoolDb schoolDb;
+    private final SchoolDb schoolDb;
+
+    public SchoolServiceImp(SchoolDb schoolDb) {
+        this.schoolDb = schoolDb;
+    }
 
     @Override
     public void add(School school) {
@@ -42,5 +46,12 @@ public class SchoolServiceImp implements  SchoolServices{
     @Override
     public List<School> getAll() {
         return schoolDb.getAll();
+    }
+
+    @Override
+    public void addAll(School... schools) {
+        for (School school : schools){
+            schoolDb.add(school);
+        }
     }
 }
