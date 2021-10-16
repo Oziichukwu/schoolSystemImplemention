@@ -21,23 +21,26 @@ public class SchoolServiceImp implements  SchoolServices{
     }
 
     @Override
-    public School update(long id) throws SchoolNotFoundException {
+    public School update(long id, School school) throws SchoolNotFoundException {
 
-        School school = schoolDb.findById(id);
+        School foundSchool = findById(id);
 
-        if (school == null){
-            throw new SchoolNotFoundException("School with this id is not found");
-        }
-        return null;
+        return school;
     }
 
     @Override
-    public School findById(long id) {
-        return null;
+    public School findById(long id) throws SchoolNotFoundException {
+
+        School foundSchool = schoolDb.findById(id);
+
+        if (foundSchool == null){
+            throw new SchoolNotFoundException("School with this id is not found");
+        }
+        return foundSchool;
     }
 
     @Override
     public List<School> getAll() {
-        return null;
+        return schoolDb.getAll();
     }
 }
