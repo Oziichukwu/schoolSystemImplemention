@@ -1,2 +1,5 @@
-package models;public class Teacher {
+package models;
+
+public class Teacher {
+
 }
