@@ -1,4 +1,4 @@
 package models;
 
-public class Classes {
+public class Subject {
 }
