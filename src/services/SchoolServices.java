@@ -9,7 +9,7 @@ public interface SchoolServices {
 
     void add(School school);
     void delete(School school);
-    School update(long id) throws SchoolNotFoundException;
-    School findById(long id);
+    School update(long id, School school) throws SchoolNotFoundException;
+    School findById(long id) throws SchoolNotFoundException;
     List<School> getAll();
 }
